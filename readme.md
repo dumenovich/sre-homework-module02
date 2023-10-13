@@ -24,7 +24,8 @@
 ### Порядок действий
 
 1. Распаковать и выполнить ansible playbook для развертывания etcd, patroni, postgres и единственного инстанса Haproxy
-2. Выполнить скрипт создания БД 
+2. На виртуальных машинах db-01, db-02 проверить, что pg_hba содержат локальный ip balancer. При необходимости добавить
+3. Выполнить скрипт создания БД 
 
 ```sql
 create table if not exists public.cities
@@ -43,9 +44,9 @@ create table if not exists public.forecast
 )`
 ```
 
-3. Распаковать и выполнить helm chart для разворачивания api в выделенном неймспейсе **namespace: sre-cource-student-23** 
+4. Распаковать и выполнить helm chart для разворачивания api в выделенном неймспейсе **namespace: sre-cource-student-23** 
 Перед выполнением удостовриться, что версия API последняя **https://github.com/LdEsT/SreCourseApi/pkgs/container/sre-course%2Fapi**
-4. Проверить работоспособность
+5. Проверить работоспособность
 
 
 ### Enjoy!
